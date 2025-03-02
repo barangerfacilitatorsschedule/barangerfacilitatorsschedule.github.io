@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calendrier du semestre</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    td {
+      border: 1px solid black;
+      padding: 10px;
+      width: 80px;
+      height: 80px; 
+      text-align: center;
+      cursor: pointer;
+    }
+    .weekend {
+      background-color: black;
+      color: white;
+      pointer-events: none;
+    }
+    .selected {
+      background-color: lightblue;
+    }
+    .vacation {
+      background-color: grey;
+      color: white;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <input type='text' id='nomUtilisateur' placeholder='Nom de l'utilisateur'>
+  <table id='calendrier'>
+<td class='' data-date='2025-03-03'>3 Mar 2025</td>
+<td class='' data-date='2025-03-04'>4 Mar 2025</td>
+<td class='' data-date='2025-03-05'>5 Mar 2025</td>
+<td class='' data-date='2025-03-06'>6 Mar 2025</td>
+<td class='' data-date='2025-03-07'>7 Mar 2025</td>
+<td class='weekend' data-date='2025-03-08'>8 Mar 2025</td>
+<tr></tr>
+<td class='weekend' data-date='2025-03-09'>9 Mar 2025</td>
+<td class='' data-date='2025-03-10'>10 Mar 2025</td>
+<td class='' data-date='2025-03-11'>11 Mar 2025</td>
+<td class='' data-date='2025-03-12'>12 Mar 2025</td>
+<td class='' data-date='2025-03-13'>13 Mar 2025</td>
+<td class='' data-date='2025-03-14'>14 Mar 2025</td>
+<td class='weekend' data-date='2025-03-15'>15 Mar 2025</td>
+<tr></tr>
+<td class='weekend' data-date='2025-03-16'>16 Mar 2025</td>
+<td class='' data-date='2025-03-17'>17 Mar 2025</td>
+<td class='' data-date='2025-03-18'>18 Mar 2025</td>
+<td class='' data-date='2025-03-19'>19 Mar 2025</td>
+<td class='' data-date='2025-03-20'>20 Mar 2025</td>
+<td class='' data-date='2025-03-21'>21 Mar 2025</td>
+<td class='weekend' data-date='2025-03-22'>22 Mar 2025</td>
+<tr></tr>
+<td class='weekend' data-date='2025-03-23'>23 Mar 2025</td>
+<td class='' data-date='2025-03-24'>24 Mar 2025</td>
+<td class='vacation' data-date='2025-03-25'>25 Mar 2025</td>
+<td class='vacation' data-date='2025-03-26'>26 Mar 2025</td>
+<td class='vacation' data-date='2025-03-27'>27 Mar 2025</td>
+<td class='' data-date='2025-03-28'>28 Mar 2025</td>
+<td class='weekend' data-date='2025-03-29'>29 Mar 2025</td>
+<tr></tr>
+<td class='weekend' data-date='2025-03-30'>30 Mar 2025</td>
+<td class='' data-date='2025-03-31'>31 Mar 2025</td>
+<td class='' data-date='2025-04-01'>1 Apr 2025</td>
+<td class='' data-date='2025-04-02'>2 Apr 2025</td>
+<td class='' data-date='2025-04-03'>3 Apr 2025</td>
+<td class='' data-date='2025-04-04'>4 Apr 2025</td>
+<td class='weekend' data-date='2025-04-05'>5 Apr 2025</td>
+<tr></tr>
+<td class='weekend' data-date='2025-04-06'>6 Apr 2025</td>
+<td class='' data-date='2025-04-07'>7 Apr 2025</td>
+<td class='' data-date='2025-04-08'>8 Apr 2025</td>
+<td class='' data-date='2025-04-09'>9 Apr 2025</td>
+<td class='' data-date='2025-04-10'>10 Apr 2025</td>
+<td class='' data-date='2025-04-11'>11 Apr 2025</td>
+<td class='weekend' data-date='2025-04-12'>12 Apr 2025</td>
+<tr></tr>
+<td class='weekend' data-date='2025-04-13'>13 Apr 2025</td>
+<td class='' data-date='2025-04-14'>14 Apr 2025</td>
+<td class='' data-date='2025-04-15'>15 Apr 2025</td>
+<td class='' data-date='2025-04-16'>16 Apr 2025</td>
+<td class='' data-date='2025-04-17'>17 Apr 2025</td>
+<td class='' data-date='2025-04-18'>18 Apr 2025</td>
+<td class='weekend' data-date='2025-04-19'>19 Apr 2025</td>
+<tr></tr>
+<td class='weekend' data-date='2025-04-20'>20 Apr 2025</td>
+<td class='' data-date='2025-04-21'>21 Apr 2025</td>
+<td class='' data-date='2025-04-22'>22 Apr 2025</td>
+<td class='' data-date='2025-04-23'>23 Apr 2025</td>
+<td class='' data-date='2025-04-24'>24 Apr 2025</td>
+<td class='' data-date='2025-04-25'>25 Apr 2025</td>
+<td class='weekend' data-date='2025-04-26'>26 Apr 2025</td>
+<tr></tr>
+<td class='weekend' data-date='2025-04-27'>27 Apr 2025</td>
+<td class='' data-date='2025-04-28'>28 Apr 2025</td>
+<td class='' data-date='2025-04-29'>29 Apr 2025</td>
+<td class='' data-date='2025-04-30'>30 Apr 2025</td>
+
+  </table>
+  <button id='valider'>Valider</button>
+  <script>
+    window.onload = function() {
+      var datesSelectionnees = [];
+      var nomUtilisateur;
+      var calendrier = document.getElementById('calendrier');
+      document.querySelectorAll('td:not(.weekend):not(.vacation)').forEach(cell => {
+        cell.addEventListener('click', function(event) {
+          var date = event.target.getAttribute('data-date');
+          if (datesSelectionnees.includes(date)) {
+            datesSelectionnees = datesSelectionnees.filter(value => value !== date);
+            event.target.classList.remove('selected');
+          } else {
+            datesSelectionnees.push(date);
+            event.target.classList.add('selected');
+          }
+        });
+      });
+      var nomInput = document.getElementById('nomUtilisateur');
+      nomInput.addEventListener('input', function(event) {
+        nomUtilisateur = event.target.value;
+      });
+      var validerButton = document.getElementById('valider');
+      validerButton.addEventListener('click', function() {
+    var nomUtilisateur = nomInput.value.trim();
+    if (!nomUtilisateur) {
+        alert("Veuillez entrer un nom avant de valider.");
+        return;
+    }
+
+    var data = {
+        nom: nomUtilisateur,
+        dates: datesSelectionnees
+    };
+
+    var dataJSON = JSON.stringify(data, null, 2);
+    var nomFichier = nomUtilisateur.replace(/\s+/g, '_') + '_caldata.json';
+
+    // Créer le fichier JSON
+    var blob = new Blob([dataJSON], { type: 'application/json' });
+    var file = new File([blob], nomFichier, { type: 'application/json' });
+
+    // Ajouter au formulaire caché
+    var fileInput = document.getElementById("jsonFileInput");
+    var dataTransfer = new DataTransfer();
+    dataTransfer.items.add(file);
+    fileInput.files = dataTransfer.files;
+
+    // Envoyer automatiquement le fichier par email via FormSubmit
+    document.getElementById("emailForm").submit();
+});
+
+    };
+  </script>
+
+  <!-- Formulaire caché pour envoyer le fichier par email -->
+  <form id="emailForm" action="https://formsubmit.co/a.updatesociety@gmail.com" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_subject" value="Sélection de dates">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="file" name="file" id="jsonFileInput" style="display:none;">
+    <button type="submit" style="display:none;"></button>
+  </form>
+
+</body>
+</html>
