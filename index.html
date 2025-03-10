@@ -3,6 +3,7 @@
 <head>
   <title>Calendrier du semestre</title>
   <style>
+  /* Styles pour le tableau */
     table {
       border-collapse: collapse;
       margin-top: 20px;
@@ -13,16 +14,19 @@
       width: 80px;
       height: 80px; 
       text-align: center;
-      cursor: pointer;
+      cursor: pointer;/* Indique que les cellules peuvent être sélectionnées */
     }
+    /* Style pour les week-ends (non cliquables) */
     .weekend {
       background-color: black;
       color: white;
       pointer-events: none;
     }
+    /* Style pour les jours sélectionnés */
     .selected {
       background-color: lightblue;
     }
+    /* Style pour les jours de vacances (non cliquables) */
     .vacation {
       background-color: grey;
       color: white;
@@ -33,107 +37,75 @@
 <body>
   <input type='text' id='nomUtilisateur' placeholder='Nom de l'utilisateur'>
   <table id='calendrier'>
-<td class='' data-date='2025-03-03'>3 Mar 2025</td>
-<td class='' data-date='2025-03-04'>4 Mar 2025</td>
-<td class='' data-date='2025-03-05'>5 Mar 2025</td>
-<td class='' data-date='2025-03-06'>6 Mar 2025</td>
-<td class='' data-date='2025-03-07'>7 Mar 2025</td>
-<td class='weekend' data-date='2025-03-08'>8 Mar 2025</td>
+  <!-- Les lignes du calendrier seront générées dynamiquement avec du JavaScript -->
+<td class='' data-date='2025-04-01'>1 Avril 2025</td>
+<td class='' data-date='2025-04-02'>2 Avril 2025</td>
+<td class='' data-date='2025-04-03'>3 Avril 2025</td>
+<td class='' data-date='2025-04-04'>4 Avril 2025</td>
+<td class='weekend' data-date='2025-04-05'>5 Avril 2025</td>
 <tr></tr>
-<td class='weekend' data-date='2025-03-09'>9 Mar 2025</td>
-<td class='' data-date='2025-03-10'>10 Mar 2025</td>
-<td class='' data-date='2025-03-11'>11 Mar 2025</td>
-<td class='' data-date='2025-03-12'>12 Mar 2025</td>
-<td class='' data-date='2025-03-13'>13 Mar 2025</td>
-<td class='' data-date='2025-03-14'>14 Mar 2025</td>
-<td class='weekend' data-date='2025-03-15'>15 Mar 2025</td>
+<td class='weekend' data-date='2025-04-06'>6 Avril 2025</td>
+<td class='' data-date='2025-04-07'>7 Avril 2025</td>
+<td class='' data-date='2025-04-08'>8 Avril 2025</td>
+<td class='' data-date='2025-04-09'>9 Avril 2025</td>
+<td class='' data-date='2025-04-10'>10 Avril 2025</td>
+<td class='' data-date='2025-04-11'>11 Avril 2025</td>
+<td class='weekend' data-date='2025-04-12'>12 Avril 2025</td>
 <tr></tr>
-<td class='weekend' data-date='2025-03-16'>16 Mar 2025</td>
-<td class='' data-date='2025-03-17'>17 Mar 2025</td>
-<td class='' data-date='2025-03-18'>18 Mar 2025</td>
-<td class='' data-date='2025-03-19'>19 Mar 2025</td>
-<td class='' data-date='2025-03-20'>20 Mar 2025</td>
-<td class='' data-date='2025-03-21'>21 Mar 2025</td>
-<td class='weekend' data-date='2025-03-22'>22 Mar 2025</td>
+<td class='weekend' data-date='2025-04-13'>13 Avril 2025</td>
+<td class='' data-date='2025-04-14'>14 Avril 2025</td>
+<td class='' data-date='2025-04-15'>15 Avril 2025</td>
+<td class='' data-date='2025-04-16'>16 Avril 2025</td>
+<td class='' data-date='2025-04-17'>17 Avril 2025</td>
+<td class='' data-date='2025-04-18'>18 Avril 2025</td>
+<td class='weekend' data-date='2025-04-19'>19 Avril 2025</td>
 <tr></tr>
-<td class='weekend' data-date='2025-03-23'>23 Mar 2025</td>
-<td class='' data-date='2025-03-24'>24 Mar 2025</td>
-<td class='' data-date='2025-03-25'>25 Mar 2025</td>
-<td class='' data-date='2025-03-26'>26 Mar 2025</td>
-<td class='' data-date='2025-03-27'>27 Mar 2025</td>
-<td class='' data-date='2025-03-28'>28 Mar 2025</td>
-<td class='weekend' data-date='2025-03-29'>29 Mar 2025</td>
+<td class='weekend' data-date='2025-04-20'>20 Avril 2025</td>
+<td class='' data-date='2025-04-21'>21 Avril 2025</td>
+<td class='' data-date='2025-04-22'>22 Avril 2025</td>
+<td class='' data-date='2025-04-23'>23 Avril 2025</td>
+<td class='' data-date='2025-04-24'>24 Avril 2025</td>
+<td class='' data-date='2025-04-25'>25 Avril 2025</td>
+<td class='weekend' data-date='2025-04-26'>26 Avril 2025</td>
 <tr></tr>
-<td class='weekend' data-date='2025-03-30'>30 Mar 2025</td>
-<td class='' data-date='2025-03-31'>31 Mar 2025</td>
-<td class='' data-date='2025-04-01'>1 Apr 2025</td>
-<td class='' data-date='2025-04-02'>2 Apr 2025</td>
-<td class='' data-date='2025-04-03'>3 Apr 2025</td>
-<td class='' data-date='2025-04-04'>4 Apr 2025</td>
-<td class='weekend' data-date='2025-04-05'>5 Apr 2025</td>
+<td class='weekend' data-date='2025-04-27'>27 Avril 2025</td>
+<td class='' data-date='2025-04-28'>28 Avril 2025</td>
+<td class='' data-date='2025-04-29'>29 Avril 2025</td>
+<td class='' data-date='2025-04-30'>30 Avril 2025</td>
+<td class='vacation' data-date='2025-05-01'>1 Mai 2025</td>
+<td class='' data-date='2025-05-02'>2 Mai 2025</td>
+<td class='weekend' data-date='2025-05-03'>3 Mai 2025</td>
 <tr></tr>
-<td class='weekend' data-date='2025-04-06'>6 Apr 2025</td>
-<td class='' data-date='2025-04-07'>7 Apr 2025</td>
-<td class='' data-date='2025-04-08'>8 Apr 2025</td>
-<td class='' data-date='2025-04-09'>9 Apr 2025</td>
-<td class='' data-date='2025-04-10'>10 Apr 2025</td>
-<td class='' data-date='2025-04-11'>11 Apr 2025</td>
-<td class='weekend' data-date='2025-04-12'>12 Apr 2025</td>
+<td class='weekend' data-date='2025-05-04'>4 Mai 2025</td>
+<td class='' data-date='2025-05-05'>5 Mai 2025</td>
+<td class='' data-date='2025-05-06'>6 Mai 2025</td>
+<td class='' data-date='2025-05-07'>7 Mai 2025</td>
+<td class='' data-date='2025-05-08'>8 Mai 2025</td>
+<td class='' data-date='2025-05-09'>9 Mai 2025</td>
+<td class='weekend' data-date='2025-05-10'>10 Mai 2025</td>
 <tr></tr>
-<td class='weekend' data-date='2025-04-13'>13 Apr 2025</td>
-<td class='' data-date='2025-04-14'>14 Apr 2025</td>
-<td class='' data-date='2025-04-15'>15 Apr 2025</td>
-<td class='' data-date='2025-04-16'>16 Apr 2025</td>
-<td class='' data-date='2025-04-17'>17 Apr 2025</td>
-<td class='' data-date='2025-04-18'>18 Apr 2025</td>
-<td class='weekend' data-date='2025-04-19'>19 Apr 2025</td>
+<td class='weekend' data-date='2025-05-11'>11 Mai 2025</td>
+<td class='' data-date='2025-05-12'>12 Mai 2025</td>
+<td class='' data-date='2025-05-13'>13 Mai 2025</td>
+<td class='' data-date='2025-05-14'>14 Mai 2025</td>
+<td class='' data-date='2025-05-15'>15 Mai 2025</td>
+<td class='' data-date='2025-05-16'>16 Mai 2025</td>
+<td class='weekend' data-date='2025-05-17'>17 Mai 2025</td>
 <tr></tr>
-<td class='weekend' data-date='2025-04-20'>20 Apr 2025</td>
-<td class='' data-date='2025-04-21'>21 Apr 2025</td>
-<td class='' data-date='2025-04-22'>22 Apr 2025</td>
-<td class='' data-date='2025-04-23'>23 Apr 2025</td>
-<td class='' data-date='2025-04-24'>24 Apr 2025</td>
-<td class='' data-date='2025-04-25'>25 Apr 2025</td>
-<td class='weekend' data-date='2025-04-26'>26 Apr 2025</td>
+<td class='weekend' data-date='2025-05-18'>18 Mai 2025</td>
+<td class='' data-date='2025-05-19'>19 Mai 2025</td>
+<td class='' data-date='2025-05-20'>20 Mai 2025</td>
+<td class='' data-date='2025-05-21'>21 Mai 2025</td>
+<td class='' data-date='2025-05-22'>22 Mai 2025</td>
+<td class='' data-date='2025-05-23'>23 Mai 2025</td>
+<td class='weekend' data-date='2025-05-24'>24 Mai 2025</td>
 <tr></tr>
-<td class='weekend' data-date='2025-04-27'>27 Apr 2025</td>
-<td class='' data-date='2025-04-28'>28 Apr 2025</td>
-<td class='' data-date='2025-04-29'>29 Apr 2025</td>
-<td class='' data-date='2025-04-30'>30 Apr 2025</td>
-<td class='vacation' data-date='2025-05-01'>1 May 2025</td>
-<td class='' data-date='2025-05-02'>2 May 2025</td>
-<td class='weekend' data-date='2025-05-03'>3 May 2025</td>
-<tr></tr>
-<td class='weekend' data-date='2025-05-04'>4 May 2025</td>
-<td class='' data-date='2025-05-05'>5 May 2025</td>
-<td class='' data-date='2025-05-06'>6 May 2025</td>
-<td class='' data-date='2025-05-07'>7 May 2025</td>
-<td class='' data-date='2025-05-08'>8 May 2025</td>
-<td class='' data-date='2025-05-09'>9 May 2025</td>
-<td class='weekend' data-date='2025-05-10'>10 May 2025</td>
-<tr></tr>
-<td class='weekend' data-date='2025-05-11'>11 May 2025</td>
-<td class='' data-date='2025-05-12'>12 May 2025</td>
-<td class='' data-date='2025-05-13'>13 May 2025</td>
-<td class='' data-date='2025-05-14'>14 May 2025</td>
-<td class='' data-date='2025-05-15'>15 May 2025</td>
-<td class='' data-date='2025-05-16'>16 May 2025</td>
-<td class='weekend' data-date='2025-05-17'>17 May 2025</td>
-<tr></tr>
-<td class='weekend' data-date='2025-05-18'>18 May 2025</td>
-<td class='' data-date='2025-05-19'>19 May 2025</td>
-<td class='' data-date='2025-05-20'>20 May 2025</td>
-<td class='' data-date='2025-05-21'>21 May 2025</td>
-<td class='' data-date='2025-05-22'>22 May 2025</td>
-<td class='' data-date='2025-05-23'>23 May 2025</td>
-<td class='weekend' data-date='2025-05-24'>24 May 2025</td>
-<tr></tr>
-<td class='weekend' data-date='2025-05-25'>25 May 2025</td>
-<td class='' data-date='2025-05-26'>26 May 2025</td>
-<td class='' data-date='2025-05-27'>27 May 2025</td>
-<td class='' data-date='2025-05-28'>28 May 2025</td>
-<td class='' data-date='2025-05-29'>29 May 2025</td>
-<td class='' data-date='2025-05-30'>30 May 2025</td>
+<td class='weekend' data-date='2025-05-25'>25 Mai 2025</td>
+<td class='' data-date='2025-05-26'>26 Mai 2025</td>
+<td class='' data-date='2025-05-27'>27 Mai 2025</td>
+<td class='' data-date='2025-05-28'>28 Mai 2025</td>
+<td class='' data-date='2025-05-29'>29 Mai 2025</td>
+<td class='' data-date='2025-05-30'>30 Mai 2025</td>
 
   </table>
   <button id='valider'>Valider</button>
@@ -142,9 +114,11 @@
       var datesSelectionnees = [];
       var nomUtilisateur;
       var calendrier = document.getElementById('calendrier');
+      // Ajoute un gestionnaire d'événements pour les cellules cliquables (sauf week-end et vacances)
       document.querySelectorAll('td:not(.weekend):not(.vacation)').forEach(cell => {
         cell.addEventListener('click', function(event) {
           var date = event.target.getAttribute('data-date');
+          // Ajoute ou retire une date sélectionnée
           if (datesSelectionnees.includes(date)) {
             datesSelectionnees = datesSelectionnees.filter(value => value !== date);
             event.target.classList.remove('selected');
@@ -161,27 +135,32 @@
       var validerButton = document.getElementById('valider');
       validerButton.addEventListener('click', function() {
     var nomUtilisateur = nomInput.value.trim();
+    // Vérifie si le nom de l'utilisateur est renseigné
     if (!nomUtilisateur) {
         alert("Veuillez entrer un nom avant de valider.");
         return;
     }
+    // Prépare les données JSON
     var data = {
         nom: nomUtilisateur,
         dates: datesSelectionnees
     };
     var dataJSON = JSON.stringify(data, null, 2);
     var nomFichier = nomUtilisateur.replace(/\s+/g, '_') + '_caldata.json';
+    // Création du fichier JSON pour soumission
     var blob = new Blob([dataJSON], { type: 'application/json' });
     var file = new File([blob], nomFichier, { type: 'application/json' });
     var fileInput = document.getElementById("jsonFileInput");
     var dataTransfer = new DataTransfer();
     dataTransfer.items.add(file);
     fileInput.files = dataTransfer.files;
+    // Soumet le formulaire caché
     document.getElementById("emailForm").submit();
 });
     };
   </script>
   <!-- Formulaire caché pour envoyer le fichier par email -->
+  <!-- Ce formulaire est utilisé pour envoyer les données sélectionnées par l'utilisateur par email via FormSubmit. Vérifiez que l'adresse email est correcte. -->
   <form id="emailForm" action="https://formsubmit.co/barangerfacilitatorsschedule@gmail.com" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_subject" value="Sélection de dates">
     <input type="hidden" name="_captcha" value="false">
